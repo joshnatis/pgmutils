@@ -1,9 +1,12 @@
 # pgmutils
 Utilities for processing PGM images, for fun and for art.
 
+You can find sample PGM images to operate on in the `inputs/` directory. Note that these utilities are built to operate on uncompressed images. You can use ImageMagick's `convert` utility to decompress: `convert -compress none input.pgm output.pgm` (works with inputs of many file types).
+
 ## colorize
 Treats an input PGM image (which is black and white) and colorizes it according to a user-specified color palette.
 
+### Usage
 ```
 usage: colorize.py [-h] [-o] [-c  [...] | -f ] [-w] [-i] [-p PIXELATE] image
 
@@ -33,14 +36,136 @@ Python3 modules `matplotlib` and `turtle`
 
 `python3 colorize.py inputs/doge.pgm --file palettes/doge`
 
-![doge input](colorize/demo_assets/doge_bw.jpg)
+![doge input](demo_assets/doge_bw.jpg)
 ![doge output](colorize/outputs/doge_colorized.jpg)
 
 `python3 colorize.py inputs/acid.pgm -i --colors blue magenta pink -p 4`
 
-![acid input](colorize/demo_assets/acid_bw.jpg)
+![acid input](demo_assets/acid_bw.jpg)
 ![acid output](colorize/outputs/acid_colorized.jpg)
 
 *Any resizing is accidental, all demo images are screenshots*
 
+---
+
 ## eufx
+_/yo͞o fəks/_, applies filters to an input PGM image
+
+### Usage
+```
+./eufx --filter <filter_type> input.pgm output.pgm
+```
+
+### Build
+1. `git clone https://github.com/joshnatis/pgmutils`
+2. `cd eufx/`
+2. `make`
+
+### Dependencies
+`c++` and `make`
+  
+## Available Filters
+```
+rotate
+asciify
+scale_down
+scale_up
+noise
+posterize
+nothing
+invert
+frame
+box_blur
+gaussian_blur
+motion_blur
+sobol_edge_detection
+horizontal_edge_detection
+vertical_edge_detection
+45_edge_detection
+all_edge_detection
+edge_detection_2
+sharpen1
+sharpen2
+deepfry
+gridlines
+emboss
+acid
+soundscape
+```
+
+## Examples
+
+Originals:
+
+![cat](demo_assets/cat.jpg)
+![cat2](demo_assets/cat2.jpg)
+![dog](demo_assets/dog.jpg)
+
+Filtered:
+
+![cat median](eufx/outputs/cat_median.jpg)
+![cat2_median](eufx/outputs/cat2_median.jpg)
+![edge](eufx/outputs/edge.jpg)
+![invertedv](eufx/outputs/invertedv.jpg)
+![motion](eufx/outputs/motion.jpg)
+![noise](eufx/outputs/noise.jpg)
+![pix](eufx/outputs/pix.jpg)
+![postercat](eufx/outputs/postercat.jpg)
+![randomcade](eufx/outputs/randomcade.jpg)
+![sharp2](eufx/outputs/sharp2.jpg)
+![sharp4](eufx/outputs/sharp4.jpg)
+![soundscape2](eufx/outputs/soundscape2.jpg)
+
+## All Your ASCII Cade Are Belong To Us
+```
+#################****##############################*****########
+################******############################******########
+################******##########################*********#######
+###############*******#########################****#*****#######
+###########*####******######################******###****#######
+############*##********#####################*****####****#######
+###########**##********#######*####*##*####*.*****###****#######
+############*#***********#####*###***#*****.******###****#######
+##############********************..**.***.*******###****#######
+#############*******************.****************####*****######
+###############*.****.........**..****************###*****######
+###############*.***.......*..*.*******************#******######
+###############*****.........*****************####********######
+###############****..........***.*************#####*******######
+###############***..........********************##*#******######
+###############***.........*******************************######
+###############***.......*********************************######
+###############**.....************************************######
+###############*.....*###*************###*****************######
+##############*.....**.###**********######****************######
+#############*......*#*##**..******##*#**#****************######
+#############.......***#*#*...*****#**#*#*****************######
+############*.......*******.******###*********************######
+############*.......******..******************************######
+############*........****...******************************######
+############*.........*.....******************************######
+############*..............********************************#####
+############*............*********************************######
+#############*.....*.....**#*##****************************#####
+#############*...***....****##*****************************#####
+#############*....**....****#******************************#####
+#############*....**..******#******************************#####
+############*.....***..****###*****************************#####
+############*.....****..****###*****************************####
+###########**.....****...******###**************************####
+###########*.....*******..***********************************###
+##########**......*******...*********************************###
+##########*.......********..**********************************##
+##########*.......*********.**********************************##
+##########**......*********************************************#
+##########*.......*********************************************#
+##########*.......*********************************************#
+#########**........********************************************#
+#########***........********************************************
+##########***.......********************************************
+###########**.........*****************************************#
+###########**........*******************************************
+###########**........*****************#*************************
+```
+
+---
