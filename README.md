@@ -64,7 +64,7 @@ _/yo͞o fəks/_, applies filters to an input PGM image
 ### Dependencies
 `c++11` and `make`
 
-## Available Filters
+### Available Filters
 ```
 rotate
 asciify
@@ -93,7 +93,7 @@ acid
 soundscape
 ```
 
-## Examples
+### Examples
 
 Originals:
 
