@@ -25,10 +25,12 @@ optional arguments:
 
 `python3 colorize.py inputs/doge.pgm --file palettes/doge`
 
-![doge input](colorize/inputs/doge.pgm)
+![doge input](colorize/demo_assets/doge_bw.jpg)
 ![doge output](colorize/outputs/doge_colorized.jpg)
 
 `python3 colorize.py inputs/acid.pgm -i --colors blue magenta pink -p 4`
 
-![acid input](colorize/inputs/acid.pgm)
+![acid input](colorize/demo_assets/acid_bw.jpg)
 ![acid output](colorize/outputs/acid_colorized.jpg)
+
+*Any resizing is accidental, all demo images are screenshots*
