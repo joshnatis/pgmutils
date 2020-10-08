@@ -25,6 +25,12 @@ optional arguments:
 
 The output graphics are done with the Python Turtle Graphics library, cause I randomly had the idea to do so. Turtle Graphics is pretty slow, so beware that large images with less pixelization (i.e. `-p num`) may take longer to process.
 
+**Dependencies**
+
+Python3 modules `matplotlib` and `turtle`
+
+**Examples**
+
 `python3 colorize.py inputs/doge.pgm --file palettes/doge`
 
 ![doge input](colorize/demo_assets/doge_bw.jpg)
@@ -36,3 +42,5 @@ The output graphics are done with the Python Turtle Graphics library, cause I ra
 ![acid output](colorize/outputs/acid_colorized.jpg)
 
 *Any resizing is accidental, all demo images are screenshots*
+
+## eufx
