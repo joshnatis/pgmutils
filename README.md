@@ -34,12 +34,12 @@ Python3 modules `matplotlib` and `turtle`
 
 ### Examples
 
-`python3 colorize.py inputs/doge.pgm --file palettes/doge`
+`python3 colorize.py doge.pgm --file palettes/doge`
 
 ![doge input](demo_assets/doge_bw.jpg)
 ![doge output](colorize/outputs/doge_colorized.jpg)
 
-`python3 colorize.py inputs/acid.pgm -i --colors blue magenta pink -p 4`
+`python3 colorize.py acid.pgm -i --colors blue magenta pink -p 4`
 
 ![acid input](demo_assets/acid_bw.jpg)
 ![acid output](colorize/outputs/acid_colorized.jpg)
@@ -63,7 +63,7 @@ _/yo͞o fəks/_, applies filters to an input PGM image
 
 ### Dependencies
 `c++11` and `make`
-  
+
 ## Available Filters
 ```
 rotate
