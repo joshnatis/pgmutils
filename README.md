@@ -23,6 +23,8 @@ optional arguments:
                         Level of pixelation for the image (1-∞)
 ```
 
+The output graphics are done with the Python Turtle Graphics library, cause I randomly had the idea to do so. Turtle Graphics is pretty slow, so beware that large images with less pixelization (i.e. `-p num`) may take longer to process.
+
 `python3 colorize.py inputs/doge.pgm --file palettes/doge`
 
 ![doge input](colorize/demo_assets/doge_bw.jpg)
