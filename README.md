@@ -97,9 +97,9 @@ soundscape
 
 Originals:
 
-![cat](demo_assets/cat.jpg)
-![cat2](demo_assets/cat2.jpg)
-![dog](demo_assets/dog.jpg)
+![cat](demo_assets/cat_bw.jpg)
+![cat2](demo_assets/cat2_bw.jpg)
+![dog](demo_assets/dog_bw.jpg)
 
 Filtered:
 
