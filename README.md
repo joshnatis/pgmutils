@@ -25,11 +25,11 @@ optional arguments:
 
 The output graphics are done with the Python Turtle Graphics library, cause I randomly had the idea to do so. Turtle Graphics is pretty slow, so beware that large images with less pixelization (i.e. `-p num`) may take longer to process.
 
-**Dependencies**
+### Dependencies
 
 Python3 modules `matplotlib` and `turtle`
 
-**Examples**
+### Examples
 
 `python3 colorize.py inputs/doge.pgm --file palettes/doge`
 
