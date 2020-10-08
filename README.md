@@ -1,8 +1,8 @@
 # pgmutils
-Utilities for processing PGM images
+Utilities for processing PGM images, for fun and for art.
 
-`python3 colorize.py inputs/doge.pgm --file palettes/doge`
-`python3 colorize.py inputs/acid.pgm -i --colors blue magenta pink -p 4`
+## colorize
+Treats an input PGM image (which is black and white) and colorizes it according to a user-specified color palette.
 
 ```
 usage: colorize.py [-h] [-o] [-c  [...] | -f ] [-w] [-i] [-p PIXELATE] image
@@ -22,3 +22,13 @@ optional arguments:
   -p PIXELATE, --pixelate PIXELATE
                         Level of pixelation for the image (1-∞)
 ```
+
+`python3 colorize.py inputs/doge.pgm --file palettes/doge`
+
+![doge input](colorize/inputs/doge.pgm)
+![doge output](colorize/outputs/doge_colorized.jpg)
+
+`python3 colorize.py inputs/acid.pgm -i --colors blue magenta pink -p 4`
+
+![acid input](colorize/inputs/acid.pgm)
+![acid output](colorize/outputs/acid_colorized.jpg)
