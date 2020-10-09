@@ -16,7 +16,9 @@ void reformat(FILE *fin, FILE *fout, int cols)
 		while(token != NULL)
 		{
 			fprintf(fout, "%s%c", token, (j == cols && (j = 1)) ? '\n':' ');
-			token = strtok(strtok(NULL, " "), "\n");
+			token = strtok(NULL, " ");
+			if(token != NULL) /* remove \n */
+				token[strcspn(token, "\n")] = 0;
 			++j;
 		}
 	}
