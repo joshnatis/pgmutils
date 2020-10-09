@@ -43,9 +43,9 @@ def tocolor(gray):
 	b = (color[2]*gray)/255
 	return (r, g, b)
 
-def setup(turt, screen, dimx, dimy, watch):
-	screen.setup(dimx, dimy)
-	screen.setworldcoordinates(0, dimy+10, dimx+10, 0)
+def setup(turt, screen, rows, cols, watch):
+	screen.setup(rows, cols)
+	screen.setworldcoordinates(0, cols+10, rows+10, 0)
 
 	if watch == False:
 		screen.delay(0)
@@ -53,17 +53,17 @@ def setup(turt, screen, dimx, dimy, watch):
 	turt.speed(0)
 	turt.hideturtle()
 	turt.penup()
-	loading(turt, screen, dimx, dimy)
+	loading(turt, screen, rows, cols)
 	turt.goto(0, 0)
 	turt.pendown()
 
-def loading(turt, screen, dimx, dimy):
+def loading(turt, screen, rows, cols):
 	screen.bgcolor("black");
 	turt.color("#39FF14")
-	turt.goto(dimx/16, dimy/4)
-	turt.write("YOUR PATIENCE", font=("Arial", int((dimx + dimy)/25), "bold"))
-	turt.goto(dimx/16, dimy/3)
-	turt.write("IS APPRECIATED...", font=("Arial", int((dimx + dimy)/40), "bold", "italic"))
+	turt.goto(rows/16, cols/4)
+	turt.write("YOUR PATIENCE", font=("Arial", int((rows + cols)/25), "bold"))
+	turt.goto(rows/16, cols/3)
+	turt.write("IS APPRECIATED...", font=("Arial", int((rows + cols)/40), "bold", "italic"))
 
 def colorize(fn, out, watch, invert):
 	doge = turtle.Turtle()
@@ -75,14 +75,14 @@ def colorize(fn, out, watch, invert):
 			if magic_number[0] != 'P':
 				print('Not a valid pgm file')
 				exit(1)
-			dimx, dimy = img.readline()[:-1].split(' ')
-			dimx = int(dimx)
-			dimy = int(dimy)
+			rows, cols = img.readline()[:-1].split(' ')
+			rows = int(rows)
+			cols = int(cols)
 			max_gray = int(img.readline()[:-1])
 
-			setup(doge, screen, dimx, dimy, watch)
+			setup(doge, screen, rows, cols, watch)
 
-			for i in range(dimy):
+			for i in range(cols):
 				pixels = img.readline().strip(' \n').split(' ')[::PIXEL_WIDTH]
 				for pixel in pixels:
 					gray = int(pixel.strip())/max_gray
