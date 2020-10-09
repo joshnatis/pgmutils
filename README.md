@@ -117,3 +117,18 @@ Filtered:
 ![soundscape2](eufx/outputs/soundscape2.jpg)
 
 ---
+
+## reformat
+Reformat a PGM image to my canonical format (rows of values separated by a single space)
+
+### Usage
+```
+./reformat input.pgm output.pgm
+```
+
+### Build
+1. `git clone https://github.com/joshnatis/pgmutils`
+2. `cd reformat/`
+2. `gcc reformat.c -Wall -Wextra -o reformat`
+
+---
