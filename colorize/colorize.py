@@ -65,7 +65,7 @@ def loading(turt, screen, rows, cols):
 	turt.goto(rows/16, cols/3)
 	turt.write("IS APPRECIATED...", font=("Arial", int((rows + cols)/40), "bold", "italic"))
 
-def colorize(fn, out, watch, invert):
+def colorize(fn, out, watch, invert, batch):
 	doge = turtle.Turtle()
 	screen = turtle.Screen()
 
@@ -101,8 +101,9 @@ def colorize(fn, out, watch, invert):
 		if out != None:
 			turtle.getscreen().getcanvas().postscript(file=out)
 
-		print("Complete.")
-		screen.exitonclick()
+		if batch == False:
+			print("Complete.")
+			screen.exitonclick()
 
 	except KeyboardInterrupt:
 		exit(1)
@@ -122,6 +123,7 @@ def main():
 	group.add_argument("-f", "--file", type=str, metavar="", help="File containing new-line separated colors for palette")
 	parser.add_argument("-w", "--watch", action="store_true", help="Watch the turtle do its magic (slow)")
 	parser.add_argument("-i", "--invert", action="store_true", help="Invert the image")
+	parser.add_argument("-b", "--batch", action="store_true", help="Close automatically when finished")
 	parser.add_argument("-p", "--pixelate", type=int, help="Level of pixelation for the image (1-∞)")
 	args = parser.parse_args()
 
@@ -137,6 +139,6 @@ def main():
 		SEED_COLORS = normalize(list(args.colors))
 
 	SEED_COLORS = sorted(SEED_COLORS, key=brightness)
-	colorize(args.image, args.out, args.watch, args.invert)
+	colorize(args.image, args.out, args.watch, args.invert, args.batch)
 
 main()
