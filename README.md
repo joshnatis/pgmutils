@@ -46,6 +46,9 @@ Python3 modules `matplotlib` and `turtle`
 
 *Any resizing is accidental, all demo images are screenshots*
 
+### Batch Processing
+I've also added a shell script that applies each palette from the `palettes/` directory to the input file and creates a PNG file for each. I have more information about that [here](https://github.com/joshnatis/pgmutils/blob/main/colorize/batch/README.md).
+
 ---
 
 ## eufx
